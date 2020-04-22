@@ -1,63 +1,10 @@
 
-Configuracion de Facturacion
-=======================
-
-Este repositorio consolida los módulos utilizados para poder realizar facturación en República Dominicana desde los módulos de Ventas, Compra, Contable y Punto de Ventas.
-
-En esta versión están disponibles los siguientes módulos:
-
-- **ncf_manager**: Este módulo agrega funcionalidades para manejar numero de comprobante fiscal NCF.
-
-        - Secuencias Preconfiguradas para manejo de todos los NCF.
-        - Validación en tiempo real de comprobantes.
-        - Consulta de tasas de banco en tiempo real.
-        - Creación de contactos por RNC o Cédula.
-
-- **ncf_pos**: Incorpora funcionalidades de facturación con NCF al punto de venta.
-      
-        - WIP: compatibilidad con impresoras fiscales
-  
-- **ncf_sale**: Este módulo extiende la funcionalidad del ``ncf_manager`` hacia ventas, para realizar algunas validaciones antes de crear la factura.
-
-- **ncf_purchase**: Este módulo extiende la funcionalidad del ``ncf_manager`` hacia compras, Se agrego un nuevo campo *Diario de Compras* en proveedores si este campo está configurado, las facturas generadas para estos proveedores toman este diario de manera predeterminada.
-
-- **dgii_report**: Este módulo extiende las funcionalidades del ``ncf_manager`` integrando los reportes de declaraciones fiscales.
-          
-- **ncf_invoice_template**: Este módulo sobre escribe el formato de las facturas para adaptarlo a la Norma General 06-2018 de la DGII.
-            
-- **external_service_addons**:
-
-         - ``l10n_do_currency_update``: Actualiza las tasas de moneda secundaria de la compañía de los bancos dominicanos
-         - ``l10n_do_rnc_validation`` : Validar RNC / Cédula del servicio externo
-
-
-         
-Configuracion
-=============
-
-
-Instalar los modulos de la localizacion
----------------------------------------
-
-Para esto, ir  **Aplicaciones** y busca **ncf**. Luego haga clic en **Instalar** el modulo ``ncf_manager`` despues los demas modulos que lo complementan.  ``ncf_invoice_template`` > ``ncf_sale`` > ``ncf_purchase`` y por ultimo ``ncf_pos`` instale este si requiere
-utilizar el punto de venta.
-
-.. image:: media/dominicana01.png
-   :align: center
-
-
-Configurar Compañía
-~~~~~~~~~~~~~~~~~~~
-
-Una vez que los módulos están instalados, el primer paso es configurar los datos de su empresa. Además de
-información básica, un campo clave es **(RNC/NIF)**:
-
-.. image:: media/dominicana02.png
-   :align: center
-   
+Configuracion de Contabilidad y Facturacion
+===========================================
 
 Catalogo de Cuentas
-~~~~~~~~~~~~~~~~~~~
+-------------------
+
 Catálogo de Cuentas e Impuestos para República Dominicana, Compatible para Internacionalización con NIIF y alineado a las normas y regulaciones de la Dirección General de Impuestos Internos (DGII).
 
       - Catálogo de Cuentas Estándar (alineado a DGII y NIIF)
@@ -140,11 +87,3 @@ Uso
 ---
 Sus **Acciones programadas** recuperarán sus tasas bancarias de la API dada en los intervalos que configure en su configuración.
 
-Contribuciones
-==============
-
-Antes de hacer una contribución al repositorio a través de un PR, les recomendamos pasar por el `historial de commits de Odoo <https://github.com/odoo/odoo/commits/12.0>`_. donde podrán visualizar el esquema el cual seguirá este repositorio.
-
-También, antes de cualquier publicación deben leer la `guía de Contribución de OCA <https://github.com/OCA/odoo-community.org/blob/master/website/Contribution/CONTRIBUTING.rst>`_. que es la base de nuestras políticas de contribución.
-
-   - Antes de poder hacer una contribución, si es la primera que realizas, debes crear un **issue** explicando el problema e indicando que harás un **PR**.
