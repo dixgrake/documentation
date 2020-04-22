@@ -1,20 +1,12 @@
+.. _index:
 
+==================================
 Localizacion Dominicana |version| 
 ==================================
 
 Introducción del Manual de Usuario
-==================================
 
-.. toctree::
-   :maxdepth: 2
-
-   introduction
-   first-steps
-   configuration_company
-   do_accounting
-
-
-Únete a nuestro grupo de telegramas: https://t.me/odoo_talks
+Únete a nuestro grupo de telegramas: https://t.me/odoord
 
 .. admonition:: Necesita nuestra ayuda?
    :class: warning
