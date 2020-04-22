@@ -1,5 +1,5 @@
-Instalar Modulo
-===============
+Instalacion
+============
 
 
 Instalar los modulos de la localizacion
