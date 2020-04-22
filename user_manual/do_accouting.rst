@@ -1,5 +1,5 @@
 
-Localizacion Dominicana
+Configuracion de Facturacion
 =======================
 
 Este repositorio consolida los módulos utilizados para poder realizar facturación en República Dominicana desde los módulos de Ventas, Compra, Contable y Punto de Ventas.

@@ -1,7 +1,7 @@
 .. _index:
 
 ==================================
-Localizacion Dominicana |version| 
+Introducción |version| 
 ==================================
 
 Introducción del Manual de Usuario
