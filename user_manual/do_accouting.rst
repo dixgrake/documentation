@@ -1,6 +1,6 @@
 
-Configuracion de Contabilidad y Facturacion
-===========================================
+Contabilidad y Facturacion
+==========================
 
 Catalogo de Cuentas
 -------------------
@@ -24,7 +24,7 @@ En la configuración de Contabilidad desplace a la seccion **Localizacion Fiscal
    :align: center
 
 Comprobantes Fiscales
-~~~~~~~~~~~~~~~~~~~~~
+---------------------
 En la configuracion de contabilidad selecione la opcion **Diario**, crear o editar el diario de ventas, escoja el Tipo de Diario > Ventas  luego active el **Control de NCF** luego haga click Generar NCF.
 
 .. image:: media/dominicana09.PNG
@@ -37,7 +37,7 @@ Secuencias generadas de forma automatica.
 
 
 Declaraciones Fiscales
-~~~~~~~~~~~~~~~~~~~~~~
+----------------------
 
 
 Tasas de Banco Dominicanos
