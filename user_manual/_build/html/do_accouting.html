@@ -1,0 +1,234 @@
+
+<!DOCTYPE html>
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Localizacion Dominicana &#8212; documentación de Documentation User - v 1.0</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/translations.js"></script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="localizacion-dominicana">
+<h1>Localizacion Dominicana<a class="headerlink" href="#localizacion-dominicana" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>Este repositorio consolida los módulos utilizados para poder realizar facturación en República Dominicana desde los módulos de Ventas, Compra, Contable y Punto de Ventas.</p>
+<p>En esta versión están disponibles los siguientes módulos:</p>
+<ul>
+<li><p><strong>ncf_manager</strong>: Este módulo agrega funcionalidades para manejar numero de comprobante fiscal NCF.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Secuencias Preconfiguradas para manejo de todos los NCF.</p></li>
+<li><p>Validación en tiempo real de comprobantes.</p></li>
+<li><p>Consulta de tasas de banco en tiempo real.</p></li>
+<li><p>Creación de contactos por RNC o Cédula.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>ncf_pos</strong>: Incorpora funcionalidades de facturación con NCF al punto de venta.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>WIP: compatibilidad con impresoras fiscales</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>ncf_sale</strong>: Este módulo extiende la funcionalidad del <code class="docutils literal notranslate"><span class="pre">ncf_manager</span></code> hacia ventas, para realizar algunas validaciones antes de crear la factura.</p></li>
+<li><p><strong>ncf_purchase</strong>: Este módulo extiende la funcionalidad del <code class="docutils literal notranslate"><span class="pre">ncf_manager</span></code> hacia compras, Se agrego un nuevo campo <em>Diario de Compras</em> en proveedores si este campo está configurado, las facturas generadas para estos proveedores toman este diario de manera predeterminada.</p></li>
+<li><p><strong>dgii_report</strong>: Este módulo extiende las funcionalidades del <code class="docutils literal notranslate"><span class="pre">ncf_manager</span></code> integrando los reportes de declaraciones fiscales.</p></li>
+<li><p><strong>ncf_invoice_template</strong>: Este módulo sobre escribe el formato de las facturas para adaptarlo a la Norma General 06-2018 de la DGII.</p></li>
+<li><p><strong>external_service_addons</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">l10n_do_currency_update</span></code>: Actualiza las tasas de moneda secundaria de la compañía de los bancos dominicanos</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">l10n_do_rnc_validation</span></code> : Validar RNC / Cédula del servicio externo</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="configuracion">
+<h1>Configuracion<a class="headerlink" href="#configuracion" title="Enlazar permanentemente con este título">¶</a></h1>
+<div class="section" id="instalar-los-modulos-de-la-localizacion">
+<h2>Instalar los modulos de la localizacion<a class="headerlink" href="#instalar-los-modulos-de-la-localizacion" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Para esto, ir  <strong>Aplicaciones</strong> y busca <strong>ncf</strong>. Luego haga clic en <strong>Instalar</strong> el modulo <code class="docutils literal notranslate"><span class="pre">ncf_manager</span></code> despues los demas modulos que lo complementan.  <code class="docutils literal notranslate"><span class="pre">ncf_invoice_template</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">ncf_sale</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">ncf_purchase</span></code> y por ultimo <code class="docutils literal notranslate"><span class="pre">ncf_pos</span></code> instale este si requiere
+utilizar el punto de venta.</p>
+<img alt="_images/dominicana01.png" class="align-center" src="_images/dominicana01.png" />
+<div class="section" id="configurar-compania">
+<h3>Configurar Compañía<a class="headerlink" href="#configurar-compania" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Una vez que los módulos están instalados, el primer paso es configurar los datos de su empresa. Además de
+información básica, un campo clave es <strong>(RNC/NIF)</strong>:</p>
+<img alt="_images/dominicana02.png" class="align-center" src="_images/dominicana02.png" />
+</div>
+<div class="section" id="catalogo-de-cuentas">
+<h3>Catalogo de Cuentas<a class="headerlink" href="#catalogo-de-cuentas" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Catálogo de Cuentas e Impuestos para República Dominicana, Compatible para Internacionalización con NIIF y alineado a las normas y regulaciones de la Dirección General de Impuestos Internos (DGII).</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Catálogo de Cuentas Estándar (alineado a DGII y NIIF)</p></li>
+<li><dl class="simple">
+<dt>Catálogo de Impuestos con la mayoría de Impuestos Preconfigurados</dt><dd><ul>
+<li><p>ITBIS para compras y ventas</p></li>
+<li><p>Retenciones de ITBIS</p></li>
+<li><p>Retenciones de ISR</p></li>
+<li><dl class="simple">
+<dt>Grupos de Impuestos y Retenciones:</dt><dd><ul>
+<li><p>Telecomunicaiones</p></li>
+<li><p>Proveedores de Materiales de Construcción</p></li>
+<li><p>Personas Físicas Proveedoras de Servicios</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>Otros impuestos</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+<p>En la configuración de Contabilidad desplace a la seccion <strong>Localizacion Fiscal</strong> vera un paquete prefoconfigurado del catalogo de cuentas dominicano que se le instalara de manera automatica, que están relacionados con el tipo de responsabilidad fiscal de la compañía.</p>
+<img alt="_images/dominicana03.png" class="align-center" src="_images/dominicana03.png" />
+</div>
+<div class="section" id="comprobantes-fiscales">
+<h3>Comprobantes Fiscales<a class="headerlink" href="#comprobantes-fiscales" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>En la configuracion de contabilidad selecione la opcion <strong>Diario</strong>, crear o editar el diario de ventas, escoja el Tipo de Diario &gt; Ventas  luego active el <strong>Control de NCF</strong> luego haga click Generar NCF.</p>
+<img alt="_images/dominicana09.PNG" class="align-center" src="_images/dominicana09.PNG" />
+<p>Secuencias generadas de forma automatica.</p>
+<img alt="_images/dominicana10.PNG" class="align-center" src="_images/dominicana10.PNG" />
+</div>
+<div class="section" id="declaraciones-fiscales">
+<h3>Declaraciones Fiscales<a class="headerlink" href="#declaraciones-fiscales" title="Enlazar permanentemente con este título">¶</a></h3>
+</div>
+</div>
+</div>
+<div class="section" id="tasas-de-banco-dominicanos">
+<h1>Tasas de Banco Dominicanos<a class="headerlink" href="#tasas-de-banco-dominicanos" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>Para esto, ir  <strong>Aplicaciones</strong> y buscar <strong>Dominican Banks Currency Update</strong>. Luego haga clic en <em>Instalar</em>.</p>
+<img alt="_images/dominicana04.png" class="align-center" src="_images/dominicana04.png" />
+<div class="section" id="configuraciones">
+<h2>Configuraciones<a class="headerlink" href="#configuraciones" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>En la configuracion de contabilidad desplace hasta la seccion <strong>Monedas</strong> active la función de Multi-Divisa luego Configure los parámetros de tasas de su banco dominicano como banco, intervalo, base y compensación.</p>
+<img alt="_images/dominicana05.png" class="align-center" src="_images/dominicana05.png" />
+</div>
+<div class="section" id="configuraciones-tecnicas">
+<h2>Configuraciones técnicas<a class="headerlink" href="#configuraciones-tecnicas" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Debe configurar su clave API para autenticarse con el servicio externo.
+* Vaya a Configuración&gt; Técnico&gt; Parámetros&gt; Parámetros del sistema
+* Establezca su clave en el valor de registro de parámetro <cite>indexa.api.token</cite></p>
+<img alt="_images/dominicana06.png" class="align-center" src="_images/dominicana06.png" />
+<p>Puede configurar el momento en que se ejecutará su acción de actualización de moneda</p>
+<ul class="simple">
+<li><p>Vaya a Configuración&gt; Automatización&gt; Acciones programadas</p></li>
+</ul>
+<img alt="_images/dominicana07.png" class="align-center" src="_images/dominicana07.png" />
+<ul class="simple">
+<li><p>Haga clic en <strong>[TASAS] Actualizar Tasas</strong> cron</p></li>
+<li><p>Establezca su hora en la próxima fecha de ejecución</p></li>
+</ul>
+<img alt="_images/dominicana08.png" class="align-center" src="_images/dominicana08.png" />
+</div>
+<div class="section" id="notas">
+<h2>Notas<a class="headerlink" href="#notas" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>No cambie ningún otro campo <strong>Acciones programadas</strong>. Su cron debe ejecutarse diariamente, incluso si sus parámetros <strong>Tasas de Banco Dominicano</strong> no lo hacen.</p>
+</div>
+<div class="section" id="uso">
+<h2>Uso<a class="headerlink" href="#uso" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Sus <strong>Acciones programadas</strong> recuperarán sus tasas bancarias de la API dada en los intervalos que configure en su configuración.</p>
+</div>
+</div>
+<div class="section" id="contribuciones">
+<h1>Contribuciones<a class="headerlink" href="#contribuciones" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>Antes de hacer una contribución al repositorio a través de un PR, les recomendamos pasar por el <a class="reference external" href="https://github.com/odoo/odoo/commits/12.0">historial de commits de Odoo</a>. donde podrán visualizar el esquema el cual seguirá este repositorio.</p>
+<p>También, antes de cualquier publicación deben leer la <a class="reference external" href="https://github.com/OCA/odoo-community.org/blob/master/website/Contribution/CONTRIBUTING.rst">guía de Contribución de OCA</a>. que es la base de nuestras políticas de contribución.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Antes de poder hacer una contribución, si es la primera que realizas, debes crear un <strong>issue</strong> explicando el problema e indicando que harás un <strong>PR</strong>.</p></li>
+</ul>
+</div></blockquote>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Documentation User</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navegación</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Búsqueda rápida</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Ir a" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2015 - 2020, Odoo Dominicana.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.0.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/do_accouting.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
